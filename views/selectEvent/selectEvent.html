@@ -1,0 +1,7 @@
+<div id="eventSelector" ng-controller="SelectEventCtrl">
+	<select ng-options="event.name for event in events track by event.event_id" ng-model="selectedEvent"></select>
+	<div id="scoutBtn">
+	<a href="/#/event/{{selectedEvent.event_id}}" class="btn">Scout</a>
+	</div>
+	
+</div>

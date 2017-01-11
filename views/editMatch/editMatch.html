@@ -1,0 +1,162 @@
+<div id="editMatchRecord">
+	<h2>Edit Match Records</h2>
+	<div ng-controller="EditMatchRecordCtrl">
+		<form>
+			<!-- The information on the team and who provided the information -->
+			<b>Team and Match Info</b>
+			<table >
+				<tr>
+				<td>Team Number:</td><td><input type="text" ng-model="match.team_num"></td>
+				</tr>
+				
+				<tr>
+				<td>Match Number:</td><td><input type="text" ng-model="match.match_num"></td>
+				</tr>
+				
+				<tr>
+				<td>Scout Name:</td><td><input type="text" ng-model="match.scout_name"></td>
+				</tr>
+			</table>
+			
+			<br/>
+			
+			<!-- The scores and values and such of the autonomous period -->
+            <b>Autonomous</b>
+			<table>
+				
+				<tr>
+				<td>Defense reached:</td><td>
+				<select name="auton_reach" ng-model="match.auton_reach">
+                  <option value="lowbar">Low Bar</option>
+                  <option value="portcullis">Portcullis</option>
+                  <option value="chevaldefrise">Cheval De Frise</option>
+                  <option value="moat">Moat</option>
+                  <option value="ramparts">Ramparts</option>
+                  <option value="drawbridge">Drawbridge</option>
+                  <option value="sallydoor">Sally Door</option>
+                  <option value="roughterrain">Rough Terrain</option>
+                  <option value="rockwall">Rock Wall</option>
+                  <option value="None">None</option>
+                </select>
+				</tr>
+				
+				<tr>
+				<td>Defense crossed:</td><td><select name="auton_cross" ng-model="match.auton_cross">
+                  <option value="lowbar">Low Bar</option>
+                  <option value="portcullis">Portcullis</option>
+                  <option value="chevaldefrise">Cheval De Frise</option>
+                  <option value="moat">Moat</option>
+                  <option value="ramparts">Ramparts</option>
+                  <option value="drawbridge">Drawbridge</option>
+                  <option value="sallydoor">Sally Door</option>
+                  <option value="roughterrain">Rough Terrain</option>
+                  <option value="rockwall">Rock Wall</option>
+                  <option value="None">None</option>
+                </select></td>
+				</tr>
+				
+				<tr>
+                <td>Retrieve balls from midline?</td><td><input type="radio" value="yes" name="auton_midline" ng-model="match.auton_midline"> Yes <input type="radio" value="no" name="auton_midline" ng-model="match.auton_midline"> No</td>
+                </tr> 
+				
+				<tr>
+				<td>Number of boulders scored/shot high:</td><td><input type="text" ng-model="match.auton_scored_high"> / <input type="text" ng-model="match.auton_shot_high"></td>
+				</tr>
+
+                <tr>
+				<td>Number of boulders scored/shot low:</td><td><input type="text" ng-model="match.auton_scored_low"> / <input type="text" ng-model="match.auton_shot_low"> </td>
+				</tr>
+			</table>
+			
+			<br/>
+			
+			<!-- The scores and values and such of the teleoperated period -->
+            <b>Teleoperated</b>
+			<table >
+				
+				<tr>
+				<td>What type of bot?</td><td><input type="radio" value="Stand-Alone" name="bot_type" ng-model="match.bot_type"> Stand-Alone <input type="radio" value="OuterWorks" name="bot_type" ng-model="match.bot_type"> OuterWorks <input type="radio" value="Shooter" name="bot_type" ng-model="match.bot_type"> Shooter <input type="radio" value="Defender" name="bot_type" ng-model="match.bot_type"> Defender</td>
+				</tr>
+				
+				<tr>
+				<td>Defensive ability:</td><td><input type="radio" value="1" name="defensive_ability" ng-model="match.defensive_ability"> 1 <input type="radio" value="2" name="defensive_ability" ng-model="match.defensive_ability"> 2 <input type="radio" value="3" name="defensive_ability" ng-model="match.defensive_ability"> 3 <input type="radio" value="4" name="defensive_ability" ng-model="match.defensive_ability"> 4 <input type="radio" value="5" name="defensive_ability" ng-model="match.defensive_ability"> 5</td>
+				</tr>
+				
+				<tr>
+				<td>Category A:</td>
+				<td>Portcullis: <input type="text" ng-model="match.portcullis_crossings">  Cheval-de-Frise: <input type="text" ng-model="match.chevaldefrise_crossings"></td>
+				</tr>
+				
+				<tr>
+				<td>Category B:</td>
+				<td>Moat: <input type="text" ng-model="match.moat_crossings">  Ramparts: <input type="text" ng-model="match.ramparts_crossings"></td>
+				</tr>
+				
+				<tr>
+				<td>Category C:</td>
+				<td>Drawbridge: <input type="text" ng-model="match.drawbridge_crossings">  Sally Port: <input type="text" ng-model="match.sallyport_crossings"  ></td>
+				</tr>
+				
+				<tr>
+				<td>Category D</td>
+				<td>Rock Wall: <input type="text" ng-model="match.rockwall_crossings"> Rough Terrain: <input type="text" ng-model="match.roughterrain_crossings"  ></td>
+				</tr>
+				
+				<tr>
+				<td>Number of low bar crossings:</td>
+				<td><input type="text" ng-model="match.lowbar_crossings"></td>
+				</tr>
+				
+				<tr>
+				<td>Shooter Range:</td>
+				<td><input type="radio" value="Outer Works" name="shooter_range" ng-model="match.shooter_range"> Outer Works <input type="radio" value="Courtyard" name="shooter_range" ng-model="match.shooter_range">Courtyard <input type="radio" value="Batter" name="shooter_range" ng-model="match.shooter_range">Batter</td>
+				</tr>
+				
+				<tr>
+				<td>Primary Goal:</td>
+				<td><input type="radio" value="high" ng-model="match.primary_goal"> High <input type="radio" value="low" ng-model="match.primary_goal"> Low</td>
+				</tr>
+				
+				<tr>
+				<td>High boulders scored:</td>
+				<td><input type="text" ng-model="match.high_boulders_scored"> / <input type="text" ng-model="match.high_boulders_shot"  ></td> 
+				</tr>
+				
+				<tr>
+				<td>Low boulders scored:</td>
+				<td><input type="text" ng-model="match.low_boulders_scored"> / <input type="text" ng-model="match.low_boulders_shot"></td>
+				</tr>
+				
+				<tr>
+				<td>Balls Acquired:</td>
+				<td><input type="radio" value="Floor Loading" ng-model="match.balls_acquired"> Floor Loading <input type="radio" value="Low Passage" ng-model="match.balls_acquired"> Low Passage <input type="radio" value="High Passage" ng-model="match.balls_acquired"> High Passage</td>
+				</tr>
+				
+			</table>
+			
+			<br/>
+			
+			<!-- End Game, comments -->
+			<b>End Game</b>
+			<table>
+				<tr>
+                <td>Challenge</td>
+                <td><input type="radio" value="yes" name="challenge" ng-model="match.challenge">Yes <input type="radio" value="no" name="challenge" ng-model="match.challenge">No</td>
+                </tr> 
+                
+                <tr>
+                <td>Scale</td>
+                <td><input type="radio" value="yes" name="scaled" ng-model="match.scaled">Yes <input type="radio" value="no" name="scaled" ng-model="match.scaled">No</td>
+                </tr> 
+				
+				<tr>
+				<td>Comments:</td><td> <input type="message" ng-model="match.comments"></td>
+				</tr>
+			
+			</table>
+			</td><td><input type="submit" ng-click="updateMatchRecord()" value="Update Match Record">
+
+		</form>
+		
+	</div>
+</div>
