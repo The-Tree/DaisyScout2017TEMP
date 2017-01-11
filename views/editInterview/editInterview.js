@@ -75,6 +75,8 @@ angular.module('daisyscoutApp.editInterviewRecord', ['ngRoute'])
                 window.location = "/#/event/"+ $routeParams.eventID + "/team/" + $scope.interview.team_num;
                 // TODO: redirect to main page / clear values from fields
 				//NOT TO DO: redirect to main page
+				
+				//this is a test
             });
 		}
 	}
