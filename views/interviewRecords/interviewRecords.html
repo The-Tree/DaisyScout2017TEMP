@@ -72,6 +72,10 @@
 			  </tr>
 				
 				<tr>
+				<td><label>Ball Capacity:</td><td><input type="text" ng-model="capacity"> feet.</label></td>
+				</tr>
+				
+				<tr>
 				<td><label>Estimated Range:</td><td><input type="text" ng-model="range"> feet.</label></td>
 				</tr>
 				
@@ -92,7 +96,7 @@
 				<td><label>Climb Ability:</td><td>Yes<input type="radio" value="yes" name="scale_ability" ng-model="scale_ability">No<input type="radio" value="no" name="scale_ability" ng-model="scale_ability"></label></td>
 				</tr>
 			</table>
-				<input type="submit" ng-click="addInterviewRecord(team_num, scout_name, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type,range,  primary_goal, gear_ability, scale_ability)" value="Add Interview Record">
+				<input type="submit" ng-click="addInterviewRecord(team_num, scout_name, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type,capacity, range,  primary_goal, gear_ability, scale_ability)" value="Add Interview Record">
 		</form>
 		
 	</div>
