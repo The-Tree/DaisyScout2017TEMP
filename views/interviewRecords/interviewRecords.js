@@ -56,9 +56,9 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 				speed: defaultValue(speed, 0),
 				shooter_type: defaultValue(shooter_type, "UNKNOWN"),
 				capacity: defaultValue(capacity, 0),
-				range: defaultValue(range, 0),
+				primary_goal: defaultValue(range, "UNKNOWN"),
+				gear_ability: defaultValue(gear_ability, "UNKNOWN"),
 				climb_ability: defaultValue(challenge_ability, "UNKNOWN"),
-				scale_ability: defaultValue(scale_ability, "UNKNOWN")
 				})
 					.success(function(data) {
 						console.log('InterviewRecord added!', data);
