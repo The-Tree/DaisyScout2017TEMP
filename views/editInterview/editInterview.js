@@ -77,7 +77,6 @@ angular.module('daisyscoutApp.editInterviewRecord', ['ngRoute'])
 				//NOT TO DO: redirect to main page
 				
 				//this is a test
-				//this is a second test
             });
 		}
 	}
