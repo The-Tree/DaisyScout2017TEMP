@@ -19,6 +19,10 @@
 				<th ng-click="reverse=!reverse; order('totalHighScored', reverse)">Total High Goals Scored</th>
 				<th ng-click="reverse=!reverse; order('avgLowScored', reverse)">Avg. Low Goals Scored</th>
 				<th ng-click="reverse=!reverse; order('totalLowScored', reverse)">Total Low Goals Scored</th>
+				<th ng-click="reverse=!reverse; order('totalLowScored', reverse)">Total Low Goals Scored</th>
+				<th ng-click="reverse=!reverse; order('totalGearsScored', reverse)">Total Gears Scored</th>
+				<th ng-click="reverse=!reverse; order('totalRotorsScored', reverse)">Total Rotors Scored</th>
+			
 				<!--<th ng-click="reverse=!reverse; order('avgAutonScored', reverse)">Avg. Auton Scored</th>
 				<th ng-click="reverse=!reverse; order('totalAutonScored', reverse)">Total Auton Scored</th>-->
 
@@ -31,6 +35,8 @@
 				<td>{{team.totalHighScored}}</td>
 				<td>{{team.avgLowScored}}</td>
 				<td>{{team.totalLowScored}}</td>
+				<td>{{team.totalGearsScored}}</td>
+				<td>{{team.totalRotorsScored}}</td>
 
 			</tr>
 		</table>
