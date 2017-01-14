@@ -37,7 +37,7 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 		return true;
 	}
 	
-	function addInterviewRecord(team_num, scout_name, base_width, base_length, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type, primary_area, primary_goal, portcullis, chevel, moat, ramparts, drawbridge, sally, rough, rockwall, low_bar, challenge_ability, scale_ability) {
+	function addInterviewRecord(team_num, scout_name, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type,range,  primary_goal, gear_ability, scale_ability) {
 			
 		if (checkRequiredField("Team #", team_num) ) 
 		{	
@@ -48,24 +48,15 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 				scout_name: defaultValue(scout_name, "REDACTED"),
                 base_width: defaultValue(base_width, 0),
 				base_length: defaultValue(base_length, 0), 
+				base_height: defaultValue(base_height,0),
 				drive_motors: defaultValue(drive_motors, "UNKNOWN"),
 				wheel_num: defaultValue(wheel_num, 0),
 				drive_system: defaultValue(drive_system, "UNKNOWN"),
 				wheel_type: defaultValue(wheel_type, "UNKNOWN"),
 				speed: defaultValue(speed, 0),
 				shooter_type: defaultValue(shooter_type, "UNKNOWN"),
-				primary_area: defaultValue(primary_area, "UNKNOWN"),
-				primary_goal: defaultValue(primary_goal, "UNKNOWN"),
-				portcullis: defaultValue(portcullis, "UNKNOWN"),
-				chevel: defaultValue (chevel, "UNKNOWN"),
-				moat: defaultValue (moat, "UNKNOWN"),
-                ramparts: defaultValue(ramparts, "UNKNOWN"),
-                drawbridge: defaultValue(drawbridge, "UNKNOWN"),
-				sally: defaultValue(sally, "UNKNOWN"),
-				rough: defaultValue (rough, "UNKNOWN"),
-				rockwall: defaultValue (rockwall, "UNKNOWN"),
-				low_bar: defaultValue(low_bar, "UNKNOWN"),
-				challenge_ability: defaultValue(challenge_ability, "UNKNOWN"),
+				range: defaultValue(range, 0),
+				climb_ability: defaultValue(challenge_ability, "UNKNOWN"),
 				scale_ability: defaultValue(scale_ability, "UNKNOWN")
 				})
 					.success(function(data) {
