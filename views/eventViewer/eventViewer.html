@@ -9,6 +9,8 @@
 		
 		<h2>{{event.name}}</h2>
 		
+		<h1> AHHHHHHHHHHHHHHHHHHHHHHHHHHH </h1
+		
 		<h3>Teams</h3>
 		<table class="table table-striped">
 			<tr>
@@ -19,13 +21,6 @@
 				<th ng-click="reverse=!reverse; order('totalHighScored', reverse)">Total High Goals Scored</th>
 				<th ng-click="reverse=!reverse; order('avgLowScored', reverse)">Avg. Low Goals Scored</th>
 				<th ng-click="reverse=!reverse; order('totalLowScored', reverse)">Total Low Goals Scored</th>
-				<th ng-click="reverse=!reverse; order('avgDefCrossed', reverse)">Avg. Defenses Crossed</th>
-				<th ng-click="reverse=!reverse; order('totalDefCrossed', reverse)">Total Defenses Crossed</th>
-				<th ng-click="reverse=!reverse; order('totalDefACrossed', reverse)">Total Defense 'A' Crossed</th>
-				<th ng-click="reverse=!reverse; order('totalDefBCrossed', reverse)">Total Defense 'B' Crossed</th>
-				<th ng-click="reverse=!reverse; order('totalDefCCrossed', reverse)">Total Defense 'C' Crossed</th>
-				<th ng-click="reverse=!reverse; order('totalDefDCrossed', reverse)">Total Defense 'D' Crossed</th>
-				<th ng-click="reverse=!reverse; order('totalAutonCrossed', reverse)">Total Auton Crossed</th>
 				<!--<th ng-click="reverse=!reverse; order('avgAutonScored', reverse)">Avg. Auton Scored</th>
 				<th ng-click="reverse=!reverse; order('totalAutonScored', reverse)">Total Auton Scored</th>-->
 
@@ -38,48 +33,9 @@
 				<td>{{team.totalHighScored}}</td>
 				<td>{{team.avgLowScored}}</td>
 				<td>{{team.totalLowScored}}</td>
-				<td>{{team.avgDefCrossed}}</td>
-				<td>{{team.totalDefCrossed}}</td>
-				<td>{{team.totalDefACrossed}}</td>
-				<td>{{team.totalDefBCrossed}}</td>
-				<td>{{team.totalDefCCrossed}}</td>
-				<td>{{team.totalDefDCrossed}}</td>
-				<td>{{team.totalAutonCrossed}}</td>
 
 			</tr>
 		</table>
-		
-		
-		<!-- THIS DOESNT WORK AND IT MAKEE ME ANGRY -->
-		<h3>Defense Data</h3>
-		<table class="table table-striped">
-			<tr>
-				<th ng-click="reverse=!reverse; order('team_num', reverse)">Team #</th>
-				<th ng-click="reverse=!reverse; order('totalPortcullisCrossed', reverse)">Portcullis</th>				
-				<th ng-click="reverse=!reverse; order('totalChevalDeFriseCrossed', reverse)">Chevel</th>
-				<th ng-click="reverse=!reverse; order('totalMoatCrossed', reverse)">Moat</th>
-                <th ng-click="reverse=!reverse; order('totalRampartsCrossed', reverse)">Ramparts</th>
-				<th ng-click="reverse=!reverse; order('totalRoughTerrainCrossed', reverse)">Rough</th>
-				<th ng-click="reverse=!reverse; order('totalRockwallCrossed', reverse)">Rockwall</th>
-				<th ng-click="reverse=!reverse; order('totalDrawbridgeCrossed', reverse)">Drawbridge</th>				
-				<th ng-click="reverse=!reverse; order('totalSallyPortCrossed', reverse)">Sally</th>
-				<th ng-click="reverse=!reverse; order('totalLowBarCrossed', reverse)">Low Bar</th>
-				
-			</tr>
-			<tr ng-repeat="team in teams">
-				<td>{{team.team_num}}</td>
-				<td>{{team.totalPortcullisCrossed}}</td>
-				<td>{{team.totalChevalDeFriseCrossed}}</td>
-				<td>{{team.totalMoatCrossed}}</td>
-                <td>{{team.totalRampartsCrossed}}</td>
-				<td>{{team.totalRoughTerrainCrossed}}</td>
-				<td>{{team.totalRockwallCrossed}}</td>
-                <td>{{team.totalDrawbridgeCrossed}}</td>
-                <td>{{team.totalSallyPortCrossed}}</td>
-				<td>{{team.totalLowBarCrossed}}</td>
-			</tr>
-		</table>
-		
 		
 		
 		<h3>Interview Data</h3>
