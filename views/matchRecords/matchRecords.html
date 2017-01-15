@@ -10,15 +10,15 @@
 			<b>Team and Match Info</b>
 			<table >
 				<tr>
+				<td>Scout Name:</td><td><input type="text" ng-model="scout_name"></td>
+				</tr>
+			
+				<tr>
 				<td>Team Number:</td><td><input type="text" ng-model="team_num"></td>
 				</tr>
 				
 				<tr>
 				<td>Match Number:</td><td><input type="text" ng-model="match_num"></td>
-				</tr>
-				
-				<tr>
-				<td>Scout Name:</td><td><input type="text" ng-model="scout_name"></td>
 				</tr>
 			</table>
 			
@@ -29,7 +29,7 @@
 			<table>
 				
 				<tr>
-                <td>Crossed the baseline?</td><td><input type="radio" value="yes" name="auton_midline" ng-model="auton_midline"> Yes <input type="radio" value="no" name="auton_midline" ng-model="auton_midline"> No</td>
+                <td>Crossed the midline?</td><td><input type="radio" value="yes" name="auton_midline" ng-model="auton_midline"> Yes <input type="radio" value="no" name="auton_midline" ng-model="auton_midline"> No</td>
                 </tr> 
 				
 				<tr>
@@ -62,24 +62,6 @@
 				<td>What type of bot?</td><td><input type="radio" value="Stand-Alone" name="bot_type" ng-model="bot_type"> Stand-Alone <input type="radio" value="Gear" name="bot_type" ng-model="bot_type"> Gear <input type="radio" value="Shooter" name="bot_type" ng-model="bot_type"> Shooter <input type="radio" value="Defender" name="bot_type" ng-model="bot_type"> Defender</td>
 				</tr>
 				
-				<!-- Write in comments
-				<tr>
-				<td>Defensive ability:</td><td><input type="radio" value="1" name="defensive_ability" ng-model="defensive_ability"> 1 <input type="radio" value="2" name="defensive_ability" ng-model="defensive_ability"> 2 <input type="radio" value="3" name="defensive_ability" ng-model="defensive_ability"> 3 <input type="radio" value="4" name="defensive_ability" ng-model="defensive_ability"> 4 <input type="radio" value="5" name="defensive_ability" ng-model="defensive_ability"> 5</td>
-				</tr>
-				-->
-				
-				<!-- Probably wont be used
-				<tr>
-				<td>Shooter Range:</td>
-				<td><input type="radio" value="Outer Works" name="shooter_range" ng-model="shooter_range"> Outer Works <input type="radio" value="Courtyard" name="shooter_range" ng-model="shooter_range">Courtyard <input type="radio" value="Batter" name="shooter_range" ng-model="shooter_range">Batter</td>
-				</tr>
-				-->
-				
-				<tr>
-				<td>Primary Goal:</td>
-				<td><input type="radio" value="high" ng-model="primary_goal"> High <input type="radio" value="low" ng-model="primary_goal"> Low</td>
-				</tr>
-				
 				<tr>
 				<td>High balls scored:</td>
 				<td><input type="text" ng-model="high_balls_scored"> / <input type="text" ng-model="high_balls_shot"  ></td> 
@@ -96,13 +78,13 @@
 				</tr>
 				
 				<tr>
-				<td>Balls acquired:</td>
-				<td><input type="radio" value="Floor Loading" ng-model="balls_acquired"> Floor Loading <input type="radio" value="Hopper" ng-model="balls_acquired"> Hopper <input type="radio" value="Human Player" ng-model="balls_acquired"> Human Player</td>
+				<td>Rotors Started: </td>
+				<td><input type="text" ng-model="teleop_rotors"></td>
 				</tr>
 				
 				<tr>
-				<td>Rotors Started (For Alliance): </td>
-				<td><input type="text" ng-model="rotors"></td>
+				<td>Primary Intake Method:</td>
+				<td><input type="radio" value="Floor Loading" ng-model="balls_acquired"> Floor Loading <input type="radio" value="Hopper" ng-model="balls_acquired"> Hopper <input type="radio" value="Human Player" ng-model="balls_acquired"> Human Player</td>
 				</tr>
 				
 			</table>
@@ -123,13 +105,13 @@
 			
 			</table>
 			
-			<input type="submit" ng-click="addMatchRecord(team_num, match_num, scout_name, auton_midline, auton_scored_high, auton_shot_high, auton_scored_low, auton_shot_low, auton_gears,auton_rotors, bot_type , primary_goal, high_balls_scored, high_balls_shot, low_balls_scored, low_balls_shot, gears, balls_acquired, rotors, climb, comments)" value="Add Match Record">
+			<input type="submit" ng-click="addMatchRecord(scout_name, team_num, match_num, auton_midline, auton_scored_high, auton_shot_high, auton_scored_low, auton_shot_low, auton_gears, auton_rotors, bot_type, primary_goal, high_balls_scored, high_balls_shot, low_balls_scored, low_balls_shot, gears, teleop_rotors, balls_acquired, climb, comments)" value="Add Match Record">
 		
 		</form>
 		
 		<br>
 		
-		<img src="views/matchRecords/pug11.jpg" alt="Inconspicuous" height="300">
+		<img src="views/matchRecords/the_love_of_my_life.jpg" alt="Inconspicuous">
 	
 	</div>
 

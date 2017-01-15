@@ -57,9 +57,9 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 	}
 	
 	function addMatchRecord(
+		scout_name,
         team_num,
         match_num,
-        scout_name,
         auton_midline,
         auton_scored_high,
         auton_shot_high,
@@ -74,8 +74,8 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
         low_balls_scored,
         low_balls_shot,
 		gears,
+		teleop_rotors,
         balls_acquired,
-		rotors,
         climb,
         comments) {
 
@@ -103,8 +103,8 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
                 low_balls_scored: defaultValue(low_balls_scored, 0), 
                 low_balls_shot: defaultValue(low_balls_shot, 0), 
 				gears: defaultValue(gears, 0),
+				teleop_rotors: defaultValue(teleop_rotors, 0)
                 balls_acquired: defaultValue(balls_acquired, 'UNKNOWN'),
-				rotors: defaultValue(rotors, 0)
                 climb: defaultValue(challenge, 'no'),
                 comments: defaultValue(comments, '')
 			})

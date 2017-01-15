@@ -37,15 +37,16 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 		return true;
 	}
 	
-	function addInterviewRecord(team_num, scout_name, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type, capacity,range,  primary_goal, gear_ability, scale_ability) {
+	function addInterviewRecord(scout_name, team_num, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type, capacity, 
+	ball_rof, primary_goal, gear_ability, scale_ability) {
 			
 		if (checkRequiredField("Team #", team_num) ) 
 		{	
 			$http.post('PHP/add_interviewRecord.php', 
 			{
 				event_id: $routeParams.eventID,
-				team_num: team_num,
 				scout_name: defaultValue(scout_name, "REDACTED"),
+				team_num: team_num,
                 base_width: defaultValue(base_width, 0),
 				base_length: defaultValue(base_length, 0), 
 				base_height: defaultValue(base_height,0),
@@ -56,9 +57,10 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 				speed: defaultValue(speed, 0),
 				shooter_type: defaultValue(shooter_type, "UNKNOWN"),
 				capacity: defaultValue(capacity, 0),
-				primary_goal: defaultValue(range, "UNKNOWN"),
+				ball_rof: defaultValue(ball_rof, 0),
+				primary_goal: defaultValue(primary_goal, "UNKNOWN"),
 				gear_ability: defaultValue(gear_ability, "UNKNOWN"),
-				climb_ability: defaultValue(challenge_ability, "UNKNOWN"),
+				scale_ability: defaultValue(scale_ability, "UNKNOWN"),
 				})
 					.success(function(data) {
 						console.log('InterviewRecord added!', data);
