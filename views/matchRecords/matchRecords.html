@@ -59,6 +59,21 @@
 			<table >
 				
 				<tr>
+				<td>Driver Ability </td>
+				<td><input type="radio" value="1" name="driver_skill" ng-model="driver_skill">1<input type="radio" value="2" name="driver_skill" ng-model="driver_skill">2 <input type="radio" value="3" name="driver_skill" ng-model="driver_skill"> 3 <input type="radio" value="4" name="driver_skill" ng-model="driver_skill"> 4 <input type="radio" value="5" name="driver_skill" ng-model="driver_skill"> 5</td>
+				</tr>
+				
+				<tr>
+				<td>Human Player Ability </td>
+				<td><input type="radio" value="1" name="human_skill" ng-model="human_skill">1<input type="radio" value="2" name="human_skill" ng-model="human_skill">2 <input type="radio" value="3" name="human_skill" ng-model="human_skill"> 3 <input type="radio" value="4" name="human_skill" ng-model="human_skill"> 4 <input type="radio" value="5" name="human_skill" ng-model="human_skill"> 5</td>
+				</tr>
+				
+				<tr>
+				<td>Defensive Ability </td>
+				<td><input type="radio" value="1" name="defense_skill" ng-model="defense_skill">1<input type="radio" value="2" name="defense_skill" ng-model="defense_skill">2 <input type="radio" value="3" name="defense_skill" ng-model="defense_skill"> 3 <input type="radio" value="4" name="defense_skill" ng-model="defense_skill"> 4 <input type="radio" value="5" name="defense_skill" ng-model="defense_skill"> 5</td>
+				</tr>
+				
+				<tr>
 				<td>What type of bot?</td><td><input type="radio" value="Stand-Alone" name="bot_type" ng-model="bot_type"> Stand-Alone <input type="radio" value="Gear" name="bot_type" ng-model="bot_type"> Gear <input type="radio" value="Shooter" name="bot_type" ng-model="bot_type"> Shooter <input type="radio" value="Defender" name="bot_type" ng-model="bot_type"> Defender</td>
 				</tr>
 				
@@ -105,7 +120,7 @@
 			
 			</table>
 			
-			<input type="submit" ng-click="addMatchRecord(scout_name, team_num, match_num, auton_midline, auton_scored_high, auton_shot_high, auton_scored_low, auton_shot_low, auton_gears, auton_rotors, bot_type, primary_goal, high_balls_scored, high_balls_shot, low_balls_scored, low_balls_shot, gears, teleop_rotors, balls_acquired, climb, comments)" value="Add Match Record">
+			<input type="submit" ng-click="addMatchRecord(scout_name, team_num, match_num, auton_midline, auton_scored_high, auton_shot_high, auton_scored_low, auton_shot_low, auton_gears, auton_rotors, driver_skill, human_skill, defense_skill, bot_type, high_balls_scored, high_balls_shot, low_balls_scored, low_balls_shot, gears, teleop_rotors, balls_acquired, climb, comments)" value="Add Match Record">
 		
 		</form>
 		
