@@ -20,6 +20,7 @@ $data->driver_skill,
 $data->human_skill,
 $data->defense_skill
 $data->bot_type,
+$data->shooter_range,
 $data->high_balls_scored, 
 $data->high_balls_shot, 
 $data->low_balls_scored,

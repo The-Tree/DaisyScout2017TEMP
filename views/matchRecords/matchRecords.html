@@ -78,6 +78,10 @@
 				</tr>
 				
 				<tr>
+				<td>Shooter Range</td><td><input type="radio" value="Stand-Alone" name="shooter_range" ng-model="shooter_range"> Stand-Alone <input type="radio" value="Gear" name="shooter_range" ng-model="shooter_range"> Gear <input type="radio" value="Shooter" name="shooter_range" ng-model="shooter_range"> Shooter <input type="radio" value="Defender" name="shooter_range" ng-model="shooter_range"> Defender</td>
+				</tr>
+				
+				<tr>
 				<td>High balls scored:</td>
 				<td><input type="text" ng-model="high_balls_scored"> / <input type="text" ng-model="high_balls_shot"  ></td> 
 				</tr>
@@ -120,7 +124,7 @@
 			
 			</table>
 			
-			<input type="submit" ng-click="addMatchRecord(scout_name, team_num, match_num, auton_midline, auton_scored_high, auton_shot_high, auton_scored_low, auton_shot_low, auton_gears, auton_rotors, driver_skill, human_skill, defense_skill, bot_type, high_balls_scored, high_balls_shot, low_balls_scored, low_balls_shot, gears, teleop_rotors, balls_acquired, climb, comments)" value="Add Match Record">
+			<input type="submit" ng-click="addMatchRecord(scout_name, team_num, match_num, auton_midline, auton_scored_high, auton_shot_high, auton_scored_low, auton_shot_low, auton_gears, auton_rotors, driver_skill, human_skill, defense_skill, bot_type, shooter_range, high_balls_scored, high_balls_shot, low_balls_scored, low_balls_shot, gears, teleop_rotors, balls_acquired, climb, comments)" value="Add Match Record">
 		
 		</form>
 		

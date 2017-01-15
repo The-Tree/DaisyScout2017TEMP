@@ -22,6 +22,9 @@
                 <td><label>Base Length:</td><td><input type="text" name="length" ng-model="interview.base_length"> inches</td>
 				</tr>
 				<tr>
+                <td><label>Base Height:</td><td><input type="text" name="height" ng-model="interview.base_height"> inches</td>
+				</tr>
+				<tr>
 				<td>Type of drive motors:</td>
 				<td><input type="radio" value="CIM" name="drive_motors" ng-model="interview.drive_motors"> CIM
 				<input type="radio" value="MiniCIM" name="drive_motors" ng-model="interview.drive_motors"> MiniCIM
@@ -68,56 +71,27 @@
 				Other: <input type = "text" name = "shooter_type" ng-model="interview.shooter_type"></label></td>
 			  </tr>
 				<tr>
-				<td><label>Primary Shooting Area:</td>
-				<td>
-				    <input type="radio" value="outer_works" name="primary_area" ng-model="interview.primary_area"> Outer works </br>
-                    <input type="radio" value="courtyard" name="primary_area" ng-model="interview.primary_area"> Courtyard </br>
-                    <input type="radio" value="batter" name="primary_area" ng-model="interview.primary_area"> Batter
-                </td>
+				<td><label>Ball Capacity:</td><td><input type="text" ng-model="interview.capacity">balls</label></td>
 				</tr>
+				
+				<tr>
+				<td><label>Ball Rate of Fire:</td><td><input type="text" ng-model="interview.ball_rof"> balls per second</label></td>
+				</tr>
+				
 				<tr>
 				<td><label>Primary Goal:</td><td>
 				<input type="radio" value="high" name="primary_goal" ng-model="interview.primary_goal"> High </br>
 				<input type="radio" value="low" name="primary_goal" ng-model="interview.primary_goal"> Low </br>
 				<input type="radio" value="both" name="primary_goal" ng-model="interview.primary_goal"> Both
 			</table>
-			<h2>Defenses </h2>
-			<table>
-            <tr>
-				<td><label>Portcullis</td><td>Yes<input type="radio" value="yes" name="portcullis" ng-model="interview.portcullis">No<input type="radio" value="no" name="portcullis" ng-model="interview.portcullis"></label></td>
-			</tr>
-             <tr>
-				<td><label>Chevel de Frise</td><td>Yes<input type="radio" value="yes" name="chevel" ng-model="interview.chevel">No<input type="radio" value="no" name="chevel" ng-model="interview.chevel"></label></td>
-			</tr>
-             <tr>
-			<td><label>Moat</td><td>Yes<input type="radio" value="yes" name="moat" ng-model="interview.moat">No<input type="radio" value="no" name="moat" ng-model="interview.moat"></label></td>
-			</tr>             
-            <tr>
-			<td><label>Ramparts</td><td>Yes<input type="radio" value="yes" name="ramparts" ng-model="interview.ramparts">No<input type="radio" value="no" name="ramparts" ng-model="interview.ramparts"></label></td>
-			</tr>            
-            <tr>
-			<td><label>Drawbridge</td><td>Yes<input type="radio" value="yes" name="drawbridge" ng-model="interview.drawbridge">No<input type="radio" value="no" name="drawbridge" ng-model="interview.drawbridge"></label></td>
-			</tr>            
-            <tr>
-			<td><label>Sally Port</td><td>Yes<input type="radio" value="yes" name="sally" ng-model="interview.sally">No<input type="radio" value="no" name="sally" ng-model="interview.sally"></label></td>
-			</tr>           
-            <tr>
-			<td><label>Rough Terrain</td><td>Yes<input type="radio" value="yes" name="rough" ng-model="interview.rough">No<input type="radio" value="no" name="rough" ng-model="interview.rough"></label></td>
-			</tr>            
-            <tr>
-			<td><label>Rockwall</td><td>Yes<input type="radio" value="yes" name="rockwall" ng-model="interview.rockwall">No<input type="radio" value="no" name="rockwall" ng-model="interview.rockwall"></label></td>
-			</tr>            
-            <tr>
-			<td><label>Low Bar</td><td>Yes<input type="radio" value="yes" name="low_bar" ng-model="interview.low_bar">No<input type="radio" value="no" name="low_bar" ng-model="interview.low_bar"></label></td>
-			</tr>
-		  </table>
-			<h2>Tower</h2>
+			
+			<h2>Game</h2>
 			<table>
 				<tr>
-				<td><label>Challenge Ability:</td><td>Yes<input type="radio" value="yes" name="challenge_ability" ng-model="interview.challenge_ability">No<input type="radio" value="no" name="challenge_ability" ng-model="interview.challenge_ability"></label></td>
+				<td><label>Gear Manipulation Ability:</td><td>Yes<input type="radio" value="yes" name="gear_ability" ng-model="interview.gear_ability">No<input type="radio" value="no" name="gear_ability" ng-model="interview.gear_ability"></label></td>
 				</tr>
 				<tr>
-				<td><label>Scale Ability:</td><td>Yes<input type="radio" value="yes" name="scale_ability" ng-model="interview.scale_ability">No<input type="radio" value="no" name="scale_ability" ng-model="interview.scale_ability"></label></td>
+				<td><label>Climb Ability:</td><td>Yes<input type="radio" value="yes" name="scale_ability" ng-model="interview.scale_ability">No<input type="radio" value="no" name="scale_ability" ng-model="interview.scale_ability"></label></td>
 				</tr>
 			</table>
 			<input type="submit" ng-click="updateInterviewRecord()" value="Update Interview Record">

@@ -5,30 +5,22 @@ include_once('DaisyScout.php');
 $data = json_decode(file_get_contents("php://input"));
 
 echo json_encode(DaisyScout::daisybase()->editInterviewRecord(
-$data->interview_id,
 $data->event_id,
-$data->team_num,
 $data->scout_name,
+$data->team_num,
 $data->base_width,
 $data->base_length,
+$data->base_height,
 $data->drive_motors,
 $data->wheel_num,
 $data->drive_system,
 $data->wheel_type,
 $data->speed,
 $data->shooter_type,
-$data->primary_area,
+$data->capacity,
+$data->ball_rof,
 $data->primary_goal,
-$data->portcullis,
-$data->chevel,
-$data->moat,
-$data->ramparts,
-$data->drawbridge,
-$data->sally,
-$data->rough,
-$data->rockwall,
-$data->low_bar,
-$data->challenge_ability, 
+$data->gear_ability, 
 $data->scale_ability));
 
 ?>

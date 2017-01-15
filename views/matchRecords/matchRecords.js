@@ -71,6 +71,7 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 		human_skill,
 		defense_skill,
         bot_type,
+		shooter_range,
         high_balls_scored,
         high_balls_shot,
         low_balls_scored,
@@ -88,9 +89,9 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 		else if (checkRequiredField("Team number", team_num) && checkRequiredField("Match number", match_num)) {
 			$http.post('PHP/add_matchRecord.php', {
                 event_id: $routeParams.eventID,
+				scout_name: defaultValue(scout_name, 'REDACTED'),
                 team_num: team_num, 
-                match_num: match_num, 
-                scout_name: defaultValue(scout_name, 'REDACTED'),
+                match_num: match_num,
                 auton_midline: defaultValue(auton_midline, 'no'),
                 auton_scored_high: defaultValue(auton_scored_high, 0),
                 auton_shot_high: defaultValue(auton_shot_high, 0),
@@ -102,6 +103,7 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 				human_skill: defaultValue(human_skill, 3),
 				defense_skill: defaultValue(defenseSkill, 3),
                 bot_type: defaultValue(bot_type, 'UNKNOWN'),
+				shooter_range: defaultValue(shooter_Range, 'UNKNOWN'),
                 high_balls_scored: defaultValue(high_balls_scored, 0), 
                 high_balls_shot: defaultValue(high_balls_shot, 0),
                 low_balls_scored: defaultValue(low_balls_scored, 0), 
