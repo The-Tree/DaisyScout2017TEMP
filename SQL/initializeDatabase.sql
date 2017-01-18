@@ -37,8 +37,8 @@ CREATE TABLE InterviewRecords(
 	--basic team info
 	interview_id INTEGER PRIMARY KEY ASC,
 	event_id INTEGER,
-	team_num INTEGER,
 	scout_name TEXT,
+	team_num INTEGER,
 
 	--robot specs
 	base_width INTEGER,
@@ -52,6 +52,7 @@ CREATE TABLE InterviewRecords(
 
 	shooter_type TEXT,
 	capacity INT,
+	ball_rof INT,
 	primary_goal TEXT,
 
 	gear_ability TEXT, 
@@ -66,9 +67,9 @@ CREATE TABLE MatchRecords(
     --basic match/robot info
 	match_id INTEGER PRIMARY KEY ASC,
 	event_id INTEGER,
+	scout_name TEXT,
 	team_num INTEGER,
 	match_num INTEGER,
-	scout_name TEXT,
 	
 	--autonomous mode
 	auton_midline TEXT,
@@ -81,15 +82,15 @@ CREATE TABLE MatchRecords(
 
     -- Teleoperated mode
     bot_type TEXT,
-	primary_goal TEXT,
+	shooter_range TEXT,
 	high_balls_scored INTEGER,
 	high_balls_shot INTEGER,
     low_balls_scored INTEGER,
     low_balls_shot INTEGER,
 	gears INTEGER,
-    balls_acquired TEXT,
-	rotors INTEGER,
+	teleop_rotors INTEGER,
 
+	balls_acquired TEXT,
     climb TEXT,
 	comments TEXT,
 	
