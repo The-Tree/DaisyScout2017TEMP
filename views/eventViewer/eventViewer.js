@@ -44,7 +44,7 @@ angular.module('daisyscoutApp.event', ['ngRoute'])
 			//this.avgAutonScored = this.totalAutonScored / this.matchRecords.length;
 		}
 		
-		this.gearsScored = 	 
+		this.gearsScored = this.totalGearsScored;
 		
 		// 
 	}

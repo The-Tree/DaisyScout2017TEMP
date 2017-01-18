@@ -109,7 +109,7 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
                 low_balls_scored: defaultValue(low_balls_scored, 0), 
                 low_balls_shot: defaultValue(low_balls_shot, 0), 
 				gears: defaultValue(gears, 0),
-				teleop_rotors: defaultValue(teleop_rotors, 0)
+				teleop_rotors: defaultValue(teleop_rotors, 0),
                 balls_acquired: defaultValue(balls_acquired, 'UNKNOWN'),
                 climb: defaultValue(challenge, 'no'),
                 comments: defaultValue(comments, '')
