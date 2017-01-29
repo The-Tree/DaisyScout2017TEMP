@@ -125,7 +125,7 @@ class Daisybase
                                   $climb,
                                   $comments) {
         $add = $this->db->prepare(
-            "INSERT INTO " . self::MATCHRECORDS . "(event_id, scout_name, team_num, match_num, auton_midline, auton_scored_high, auton_shot_high, auton_scored_low, auton_shot_low, auton_gears, auton_rotors, driver_skill, human_skill, defense_skill, bot_type, shooter_range, high_balls_scored, high_balls_shot, low_balls_scored, low_balls_shot, gears, teleop_rotors, balls_acquired, climb, comments) values(:event_id, :scout_name, :team_num, :match_num, :auton_midline, :auton_scored_high, :auton_shot_high, :auton_scored_low, :auton_shot_low, :auton_gears, :auton_rotors, :driver_skill, :human_skill, :defense_skill, :bot_type, :shooter_range, :high_balls_scored, :high_balls_shot, :low_balls_scored, :low_balls_shot, :gears, :teleop_rotors, :balls_acquired, :climb, :comments)");
+            "INSERT INTO " . self::MATCHRECORDS . " (event_id, scout_name, team_num, match_num, auton_midline, auton_scored_high, auton_shot_high, auton_scored_low, auton_shot_low, auton_gears, auton_rotors, driver_skill, human_skill, defense_skill, bot_type, shooter_range, high_balls_scored, high_balls_shot, low_balls_scored, low_balls_shot, gears, teleop_rotors, balls_acquired, climb, comments) values(:event_id, :scout_name, :team_num, :match_num, :auton_midline, :auton_scored_high, :auton_shot_high, :auton_scored_low, :auton_shot_low, :auton_gears, :auton_rotors, :driver_skill, :human_skill, :defense_skill, :bot_type, :shooter_range, :high_balls_scored, :high_balls_shot, :low_balls_scored, :low_balls_shot, :gears, :teleop_rotors, :balls_acquired, :climb, :comments)");
             
         $add->bindValue(':event_id', $event_id, SQLITE3_INTEGER);  
 		$add->bindValue(':scout_name', $scout_name, SQLITE3_TEXT);
@@ -280,9 +280,9 @@ class Daisybase
 
 	//INTERVIEW RECORDS
 	public function addInterviewRecord($event_id, $scout_name, $team_num, $base_width, $base_length, $base_height, $drive_motors, $wheel_num, $drive_system, $wheel_type, $speed, $shooter_type, $capacity, $ball_rof, $primary_goal, $gear_ability, $scale_ability) {
-        $add = $this->db->prepare("INSERT INTO " . self::INTERVIEWRECORDS . "(event_id, scout_name, team_num, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type, capacity, ball_rof, primary_goal, gear_ability, scale_ability) values(:eventID, :scout_name, :team_num, :base_width, :base_length, :base_height, :drive_motors, :wheel_num, :drive_system, :wheel_type, :speed, :shooter_type, :capacity, :ball_rof, :primary_goal, :gear_ability, :scale_ability)");
+        $add = $this->db->prepare("INSERT INTO " . self::INTERVIEWRECORDS . "(event_id, scout_name, team_num, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type, capacity, ball_rof, primary_goal, gear_ability, scale_ability) values(:event_id, :scout_name, :team_num, :base_width, :base_length, :base_height, :drive_motors, :wheel_num, :drive_system, :wheel_type, :speed, :shooter_type, :capacity, :ball_rof, :primary_goal, :gear_ability, :scale_ability)");
             
-        $add->bindValue(':eventID', $eventID, SQLITE3_INTEGER);
+        $add->bindValue(':event_id', $event_id, SQLITE3_INTEGER);
         $add->bindValue(':scout_name', $scout_name, SQLITE3_TEXT);
         $add->bindValue(':team_num', $team_num, SQLITE3_INTEGER);
 		

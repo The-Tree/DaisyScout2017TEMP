@@ -79,6 +79,11 @@ CREATE TABLE MatchRecords(
 	auton_shot_low INTEGER,
 	auton_gears INTEGER,
 	auton_rotors INTEGER,
+	
+	--skill
+	driver_skill INTEGER,
+	human_skill INTEGER,
+	defense_skill INTEGER,
 
     -- Teleoperated mode
     bot_type TEXT,

@@ -101,9 +101,9 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 				auton_rotors: defaultValue(auton_rotors, 0),
 				driver_skill: defaultValue(driver_skill, 3),//3 because three is mid point of 1 and 5
 				human_skill: defaultValue(human_skill, 3),
-				defense_skill: defaultValue(defenseSkill, 3),
+				defense_skill: defaultValue(defense_skill, 3),
                 bot_type: defaultValue(bot_type, 'UNKNOWN'),
-				shooter_range: defaultValue(shooter_Range, 'UNKNOWN'),
+				shooter_range: defaultValue(shooter_range, 'UNKNOWN'),
                 high_balls_scored: defaultValue(high_balls_scored, 0), 
                 high_balls_shot: defaultValue(high_balls_shot, 0),
                 low_balls_scored: defaultValue(low_balls_scored, 0), 
@@ -111,7 +111,7 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 				gears: defaultValue(gears, 0),
 				teleop_rotors: defaultValue(teleop_rotors, 0),
                 balls_acquired: defaultValue(balls_acquired, 'UNKNOWN'),
-                climb: defaultValue(challenge, 'no'),
+                climb: defaultValue(climb, 'no'),
                 comments: defaultValue(comments, '')
 			})
             .success(function(data) {

@@ -42,9 +42,11 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 			
 		if (checkRequiredField("Team #", team_num) ) 
 		{	
+			console.log( 'TEST: value of $routeParams.eventID is: ' + $routeParams.eventID ); //test
+			
 			$http.post('PHP/add_interviewRecord.php', 
 			{
-				event_id: $routeParams.eventID,
+				event_id: $routeParams.eventID,				
 				scout_name: defaultValue(scout_name, "REDACTED"),
 				team_num: team_num,
                 base_width: defaultValue(base_width, 0),
