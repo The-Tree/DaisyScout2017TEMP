@@ -35,8 +35,8 @@ angular.module('daisyscoutApp.event', ['ngRoute'])
 				//shooting calculations
 				this.totalHighScored += this.matchRecords[i].high_balls_scored;
 				this.totalLowScored += this.matchRecords[i].low_balls_scored;
-				this.totalGearsScored += this.matchRecords[i].gears	;
-				this.totalRotorsScored += this.matchRecords[i].rotors;
+				this.totalGearsScored += this.matchRecords[i].gears;
+				this.totalRotorsScored += this.matchRecords[i].teleop_rotors;
 
 
 			}
@@ -44,7 +44,7 @@ angular.module('daisyscoutApp.event', ['ngRoute'])
 			//this.avgAutonScored = this.totalAutonScored / this.matchRecords.length;
 		}
 		
-		this.gearsScored = 	 
+		this.gearsScored = this.totalGearsScored;
 		
 		// 
 	}

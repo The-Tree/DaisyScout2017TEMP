@@ -5,10 +5,10 @@
             <h2>Overall</h2>        
             <table>
 				<tr>
-				<td><label>Team Number:</td><td><input type="text" name="team_num" ng-model="team_num"></label></td>
+				<td><label>Scout Name:</td><td><input type="text" name="scout_name" ng-model="scout_name"></label></td>
 				</tr>
 				<tr>
-				<td><label>Scout Name:</td><td><input type="text" name="scout_name" ng-model="scout_name"></label></td>
+				<td><label>Team Number:</td><td><input type="text" name="team_num" ng-model="team_num"></label></td>
 				</tr>
 			</table>
 			
@@ -72,19 +72,18 @@
 			  </tr>
 				
 				<tr>
-				<td><label>Ball Capacity:</td><td><input type="text" ng-model="capacity"> feet.</label></td>
+				<td><label>Ball Capacity:</td><td><input type="text" ng-model="capacity"> balls</label></td>
 				</tr>
 				
 				<tr>
-				<td><label>Estimated Range:</td><td><input type="text" ng-model="range"> feet.</label></td>
+				<td><label>Ball Rate of Fire:</td><td><input type="text" ng-model="ball_rof"> balls per second</label></td>
 				</tr>
-				
 				
 				<tr>
 				<td><label>Primary Goal:</td><td>
 				<input type="radio" value="high" name="primary_goal" ng-model="primary_goal"> High </br>
 				<input type="radio" value="low" name="primary_goal" ng-model="primary_goal"> Low </br>
-				<input type="radio" value="both" name="primary_goal" ng-model="primary_goal"> Both
+				<input type="radio" value="both" name="primary_goal" ng-model="primary_goal"> Both </br>
 			</table>
 			
 			<h2>Game</h2>
@@ -96,7 +95,8 @@
 				<td><label>Climb Ability:</td><td>Yes<input type="radio" value="yes" name="scale_ability" ng-model="scale_ability">No<input type="radio" value="no" name="scale_ability" ng-model="scale_ability"></label></td>
 				</tr>
 			</table>
-				<input type="submit" ng-click="addInterviewRecord(team_num, scout_name, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type,capacity, range,  primary_goal, gear_ability, scale_ability)" value="Add Interview Record">
+			
+				<input type="submit" ng-click="addInterviewRecord(scout_name, team_num, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type, capacity, ball_rof, primary_goal, gear_ability, scale_ability)" value="Add Interview Record">
 		</form>
 		
 	</div>

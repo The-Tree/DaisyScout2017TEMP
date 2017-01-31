@@ -57,9 +57,9 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 	}
 	
 	function addMatchRecord(
+		scout_name,
         team_num,
         match_num,
-        scout_name,
         auton_midline,
         auton_scored_high,
         auton_shot_high,
@@ -67,15 +67,18 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
         auton_shot_low,
 		auton_gears,
 		auton_rotors,
+		driver_skill,
+		human_skill,
+		defense_skill,
         bot_type,
-        primary_goal,
+		shooter_range,
         high_balls_scored,
         high_balls_shot,
         low_balls_scored,
         low_balls_shot,
 		gears,
+		teleop_rotors,
         balls_acquired,
-		rotors,
         climb,
         comments) {
 
@@ -86,9 +89,9 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 		else if (checkRequiredField("Team number", team_num) && checkRequiredField("Match number", match_num)) {
 			$http.post('PHP/add_matchRecord.php', {
                 event_id: $routeParams.eventID,
+				scout_name: defaultValue(scout_name, 'REDACTED'),
                 team_num: team_num, 
-                match_num: match_num, 
-                scout_name: defaultValue(scout_name, 'REDACTED'),
+                match_num: match_num,
                 auton_midline: defaultValue(auton_midline, 'no'),
                 auton_scored_high: defaultValue(auton_scored_high, 0),
                 auton_shot_high: defaultValue(auton_shot_high, 0),
@@ -96,16 +99,19 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
                 auton_shot_low: defaultValue(auton_shot_low, 0),
 				auton_gears: defaultValue(auton_gears, 0),
 				auton_rotors: defaultValue(auton_rotors, 0),
+				driver_skill: defaultValue(driver_skill, 3),//3 because three is mid point of 1 and 5
+				human_skill: defaultValue(human_skill, 3),
+				defense_skill: defaultValue(defense_skill, 3),
                 bot_type: defaultValue(bot_type, 'UNKNOWN'),
-                primary_goal: defaultValue(primary_goal, 'UNKNOWN'),
+				shooter_range: defaultValue(shooter_range, 'UNKNOWN'),
                 high_balls_scored: defaultValue(high_balls_scored, 0), 
                 high_balls_shot: defaultValue(high_balls_shot, 0),
                 low_balls_scored: defaultValue(low_balls_scored, 0), 
                 low_balls_shot: defaultValue(low_balls_shot, 0), 
 				gears: defaultValue(gears, 0),
+				teleop_rotors: defaultValue(teleop_rotors, 0),
                 balls_acquired: defaultValue(balls_acquired, 'UNKNOWN'),
-				rotors: defaultValue(rotors, 0)
-                climb: defaultValue(challenge, 'no'),
+                climb: defaultValue(climb, 'no'),
                 comments: defaultValue(comments, '')
 			})
             .success(function(data) {

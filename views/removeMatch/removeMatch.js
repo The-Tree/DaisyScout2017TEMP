@@ -39,7 +39,7 @@ angular.module('daisyscoutApp.removeMatch', ['ngRoute'])
 					window.location = "/#/event/"+ $routeParams.eventID + "/team/" + $scope.match.team_num;
 					// TODO: redirect to main page / clear values from fields
 					//NOT TO DO: redirect to main page
-				};
+				});
 		}
 	}
 
