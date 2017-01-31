@@ -357,7 +357,7 @@ class Daisybase
         $add = $this->db->prepare(
             "UPDATE " . self::INTERVIEWRECORDS . " SET event_id=:event_id, scout_name=:scout_name, team_num=:team_num, base_width=:base_width, base_length=:base_length, base_height=:base_height, drive_motors=:drive_motors, wheel_num=:wheel_num, drive_system=:drive_system, wheel_type=:wheel_type, speed=:speed, shooter_type=:shooter_type, capacity=:capacity, ball_rof=:ball_rof, primary_goal=:primary_goal, gear_ability=:gear_ability, scale_ability=:scale_ability WHERE interview_id=:interview_id");
             
-        $add->bindValue(':eventID', $eventID, SQLITE3_INTEGER);
+        $add->bindValue(':event_id', $event_id, SQLITE3_INTEGER);
         $add->bindValue(':scout_name', $scout_name, SQLITE3_TEXT);
         $add->bindValue(':team_num', $team_num, SQLITE3_INTEGER);
 		
