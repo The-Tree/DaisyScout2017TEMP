@@ -40,6 +40,7 @@ angular.module('daisyscoutApp.editInterviewRecord', ['ngRoute'])
 			
 		if (checkRequiredField("Team #", $scope.interview.team_num) ) 
 		{	
+			console.log($scope.interview);
 			$http.post('PHP/edit_interviewRecord.php', 
 			{
 				interview_id: $routeParams.interviewID,
@@ -57,8 +58,8 @@ angular.module('daisyscoutApp.editInterviewRecord', ['ngRoute'])
 				shooter_type: defaultValue($scope.interview.shooter_type, "UNKNOWN"),
 				capacity: defaultValue($scope.interview.capacity, 0),
 				ball_rof: defaultValue($scope.interview.ball_rof, 0),
-				primary_goal: defaultValue($scope.interview.primary_goal, 0),
-				gear_ability: defaultValue($scope.interview.gear_ability, 0),
+				primary_goal: defaultValue($scope.interview.primary_goal, "UNKNOWN"),
+				gear_ability: defaultValue($scope.interview.gear_ability, "UNKNOWN"),
 				scale_ability: defaultValue($scope.interview.scale_ability, "UNKNOWN"),
             })
             .success(function(data) {

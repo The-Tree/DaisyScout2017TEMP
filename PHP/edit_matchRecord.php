@@ -5,6 +5,7 @@ include_once('DaisyScout.php');
 $data = json_decode(file_get_contents("php://input"));
 
 echo json_encode(DaisyScout::daisybase()->editMatchRecord(
+$data->match_id,
 $data->event_id,
 $data->scout_name,
 $data->team_num, 
@@ -18,7 +19,7 @@ $data->auton_gears,
 $data->auton_rotors,
 $data->driver_skill,
 $data->human_skill,
-$data->defense_skill
+$data->defense_skill,
 $data->bot_type,
 $data->shooter_range,
 $data->high_balls_scored, 
