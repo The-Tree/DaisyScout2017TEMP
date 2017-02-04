@@ -359,7 +359,7 @@ class Daisybase
 		
         $add->bindValue(':base_width', $base_width, SQLITE3_INTEGER);
         $add->bindValue(':base_length', $base_length, SQLITE3_INTEGER);
-        $add->bindValue(':base_length', $base_height, SQLITE3_INTEGER);
+        $add->bindValue(':base_height', $base_height, SQLITE3_INTEGER);
         $add->bindValue(':drive_motors', $drive_motors, SQLITE3_TEXT);
         $add->bindValue(':wheel_num', $wheel_num, SQLITE3_INTEGER);
         $add->bindValue(':drive_system', $drive_system, SQLITE3_TEXT);
