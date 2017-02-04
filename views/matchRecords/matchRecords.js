@@ -67,10 +67,10 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 		}
 		return false;
 	}
-	
+	//This currently is not used - probably wont be - but keep in just in case
 	function returnToIndex()
 	{
-		console.log('iuh');
+		console.log('Returned to Index');
 		window.location = "/#/event/"+ $routeParams.eventID;
 		location.reload();
 	}
