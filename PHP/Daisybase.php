@@ -156,8 +156,6 @@ class Daisybase
 		$add->bindValue(':teleop_rotors', $teleop_rotors, SQLITE3_INTEGER);
         
         $add->bindValue(':balls_acquired', $balls_acquired, SQLITE3_TEXT);
-        
-        $add->bindValue(':challenge', $challenge, SQLITE3_TEXT);
         $add->bindValue(':climb', $climb, SQLITE3_TEXT);
 
         $add->bindValue(':comments', $comments, SQLITE3_TEXT);
@@ -225,9 +223,7 @@ class Daisybase
 		$add->bindValue(':teleop_rotors', $teleop_rotors, SQLITE3_INTEGER);
         
         $add->bindValue(':balls_acquired', $balls_acquired, SQLITE3_TEXT);
-        
-        $add->bindValue(':challenge', $challenge, SQLITE3_TEXT);
-        $add->bindValue(':scaled', $scaled, SQLITE3_TEXT);
+        $add->bindValue(':climb', $climb, SQLITE3_TEXT);
 
         $add->bindValue(':comments', $comments, SQLITE3_TEXT);
 		
