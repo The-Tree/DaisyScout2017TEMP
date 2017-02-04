@@ -156,8 +156,6 @@ class Daisybase
 		$add->bindValue(':teleop_rotors', $teleop_rotors, SQLITE3_INTEGER);
         
         $add->bindValue(':balls_acquired', $balls_acquired, SQLITE3_TEXT);
-        
-        $add->bindValue(':challenge', $challenge, SQLITE3_TEXT);
         $add->bindValue(':climb', $climb, SQLITE3_TEXT);
 
         $add->bindValue(':comments', $comments, SQLITE3_TEXT);
@@ -168,7 +166,8 @@ class Daisybase
         return $this->db->changes() > 0;
 	}
 	
-	public function editMatchRecord($event_id,
+	public function editMatchRecord($match_id,
+								  $event_id,
 								  $scout_name,
                                   $team_num,
 								  $match_num,
@@ -194,8 +193,34 @@ class Daisybase
                                   $climb,
                                   $comments) {
         $add = $this->db->prepare(
-            "UPDATE " . self::MATCHRECORDS . " SET event_id=:event_id, scout_name=:scout_name, team_num=:team_num, match_num=:match_num, auton_midline=:auton_midline, auton_scored_high=:auton_scored_high, auton_shot_high=:auton_shot_high, auton_scored_low=:auton_scored_low, auton_shot_low=:auton_shot_low, auton_gears=:auton_gears, auton_rotors=:auton_rotors, driver_skill=:driver_skill, human_skill=:human_skill, defense_skill=:defense_skill, bot_type=:bot_type, shooter_range=:shooter_range, high_balls_scored=:high_balls_scored, high_balls_shot=:high_balls_shot, low_balls_scored=:low_balls_scored, low_balls_shot=:low_balls_shot, gears=:gears, teleop_rotors=:teleop_rotors, balls_acquired=:balls_acquired, climb=:climb, comments=:comments WHERE match_id=:match_id");
+            "UPDATE " . self::MATCHRECORDS . " SET 
+			event_id=:event_id, 
+			scout_name=:scout_name, 
+			team_num=:team_num, 
+			match_num=:match_num, 
+			auton_midline=:auton_midline, 
+			auton_scored_high=:auton_scored_high, 
+			auton_shot_high=:auton_shot_high, 
+			auton_scored_low=:auton_scored_low, 
+			auton_shot_low=:auton_shot_low, 
+			auton_gears=:auton_gears, 
+			auton_rotors=:auton_rotors, 
+			driver_skill=:driver_skill, 
+			human_skill=:human_skill, 
+			defense_skill=:defense_skill, 
+			bot_type=:bot_type, 
+			shooter_range=:shooter_range, 
+			high_balls_scored=:high_balls_scored, 
+			high_balls_shot=:high_balls_shot, 
+			low_balls_scored=:low_balls_scored, 
+			low_balls_shot=:low_balls_shot, 
+			gears=:gears, 
+			teleop_rotors=:teleop_rotors, 
+			balls_acquired=:balls_acquired, 
+			climb=:climb, 
+			comments=:comments WHERE match_id=:match_id");
             
+			
         $add->bindValue(':event_id', $event_id, SQLITE3_INTEGER);  
 		$add->bindValue(':scout_name', $scout_name, SQLITE3_TEXT);
         $add->bindValue(':team_num', $team_num, SQLITE3_INTEGER);  
@@ -225,11 +250,11 @@ class Daisybase
 		$add->bindValue(':teleop_rotors', $teleop_rotors, SQLITE3_INTEGER);
         
         $add->bindValue(':balls_acquired', $balls_acquired, SQLITE3_TEXT);
-        
-        $add->bindValue(':challenge', $challenge, SQLITE3_TEXT);
-        $add->bindValue(':scaled', $scaled, SQLITE3_TEXT);
+        $add->bindValue(':climb', $climb, SQLITE3_TEXT);
 
         $add->bindValue(':comments', $comments, SQLITE3_TEXT);
+		
+		$add->bindValue(':match_id', $match_id,SQLITE3_INTEGER);
 		
         $add->execute();
         $add->close();
@@ -353,17 +378,53 @@ class Daisybase
 		return $records[0];
 	}
 	
-	public function editInterviewRecord($event_id, $scout_name, $team_num, $base_width, $base_length, $base_height, $drive_motors, $wheel_num, $drive_system, $wheel_type, $speed, $shooter_type, $capacity, $ball_rof, $primary_goal, $gear_ability, $scale_ability) {
-        $add = $this->db->prepare(
-            "UPDATE " . self::INTERVIEWRECORDS . " SET event_id=:event_id, scout_name=:scout_name, team_num=:team_num, base_width=:base_width, base_length=:base_length, base_height=:base_height, drive_motors=:drive_motors, wheel_num=:wheel_num, drive_system=:drive_system, wheel_type=:wheel_type, speed=:speed, shooter_type=:shooter_type, capacity=:capacity, ball_rof=:ball_rof, primary_goal=:primary_goal, gear_ability=:gear_ability, scale_ability=:scale_ability WHERE interview_id=:interview_id");
-            
+	public function editInterviewRecord($interview_id,
+										$event_id, 
+										$scout_name, 
+										$team_num, 
+										$base_width, 
+										$base_length, 
+										$base_height, 
+										$drive_motors, 
+										$wheel_num, 
+										$drive_system, 
+										$wheel_type, 
+										$speed, 
+										$shooter_type, 
+										$capacity, 
+										$ball_rof, 
+										$primary_goal, 
+										$gear_ability, 
+										$scale_ability) 
+	{
+		$add = $this->db->prepare("UPDATE " . self::INTERVIEWRECORDS . " SET 
+		event_id=:event_id, 
+		scout_name=:scout_name, 
+		team_num=:team_num, 
+		base_width=:base_width, 
+		base_length=:base_length, 
+		base_height=:base_height, 
+		drive_motors=:drive_motors, 
+		wheel_num=:wheel_num, 
+		drive_system=:drive_system,	
+		wheel_type=:wheel_type, 
+		speed=:speed, 
+		shooter_type=:shooter_type, 
+		capacity=:capacity, 
+		ball_rof=:ball_rof,
+		primary_goal=:primary_goal, 
+		gear_ability=:gear_ability, 
+		scale_ability=:scale_ability WHERE interview_id=:interview_id
+		");
+		
+		$add->bindValue(':interview_id', $interview_id, SQLITE3_INTEGER);
         $add->bindValue(':event_id', $event_id, SQLITE3_INTEGER);
         $add->bindValue(':scout_name', $scout_name, SQLITE3_TEXT);
         $add->bindValue(':team_num', $team_num, SQLITE3_INTEGER);
 		
         $add->bindValue(':base_width', $base_width, SQLITE3_INTEGER);
         $add->bindValue(':base_length', $base_length, SQLITE3_INTEGER);
-        $add->bindValue(':base_length', $base_height, SQLITE3_INTEGER);
+        $add->bindValue(':base_height', $base_height, SQLITE3_INTEGER);
         $add->bindValue(':drive_motors', $drive_motors, SQLITE3_TEXT);
         $add->bindValue(':wheel_num', $wheel_num, SQLITE3_INTEGER);
         $add->bindValue(':drive_system', $drive_system, SQLITE3_TEXT);
@@ -378,6 +439,7 @@ class Daisybase
 		
 		$add->bindValue(':gear_ability', $gear_ability, SQLITE3_TEXT);
         $add->bindValue(':scale_ability', $scale_ability, SQLITE3_TEXT);
+
         $add->execute();
         $add->close();
         

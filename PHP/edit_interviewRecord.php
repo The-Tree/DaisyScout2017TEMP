@@ -5,6 +5,7 @@ include_once('DaisyScout.php');
 $data = json_decode(file_get_contents("php://input"));
 
 echo json_encode(DaisyScout::daisybase()->editInterviewRecord(
+$data->interview_id,
 $data->event_id,
 $data->scout_name,
 $data->team_num,

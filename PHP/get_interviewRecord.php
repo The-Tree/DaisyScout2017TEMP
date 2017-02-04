@@ -4,6 +4,6 @@ include_once('DaisyScout.php');
 
 $data = json_decode(file_get_contents("php://input"));
 
-echo json_encode(DaisyScout::daisybase()->getInterviewRecord($data->eventID, $data->interviewID));
+echo json_encode(DaisyScout::daisybase()->getInterviewRecord($data->interviewID));
 // TODO: Success/Error reporting
 ?>
