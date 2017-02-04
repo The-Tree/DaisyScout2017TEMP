@@ -67,7 +67,7 @@ angular.module('daisyscoutApp.editMatchRecord', ['ngRoute'])
 				gears: defaultValue($scope.match.gears, 0),
 				teleop_rotors: defaultValue($scope.match.teleop_rotors, 0),
 				balls_acquired: defaultValue($scope.match.balls_acquired, 0),
-				climb: defaultValue($scope.match.climb, 0),
+				climb: defaultValue($scope.match.climb, 'no'),
                 comments: defaultValue($scope.match.comments, '')
             })
             .success(function(data) {
