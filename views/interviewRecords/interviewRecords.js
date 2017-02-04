@@ -17,6 +17,18 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 			$scope.InterviewRecordName = '';
         });
     }
+	
+		console.log($routeParams);
+	function getEvent() {
+		$http.post('PHP/get_event.php', {eventID: $routeParams.eventID})
+        .success(function(data) {
+            console.log("SUCCESS - Got Event!", data);
+			console.log(typeof data);
+            $scope.event = data;
+        });
+	}
+	getEvent();
+	
 	function defaultValue(property, value) {
 		if (typeof property === 'undefined') {
 			return value;
@@ -51,7 +63,7 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 				team_num: team_num,
                 base_width: defaultValue(base_width, 0),
 				base_length: defaultValue(base_length, 0), 
-				base_height: defaultValue(base_height,0),
+				base_height: defaultValue(base_height, 0),
 				drive_motors: defaultValue(drive_motors, "UNKNOWN"),
 				wheel_num: defaultValue(wheel_num, 0),
 				drive_system: defaultValue(drive_system, "UNKNOWN"),
