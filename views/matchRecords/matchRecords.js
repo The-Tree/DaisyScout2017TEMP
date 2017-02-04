@@ -19,6 +19,17 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
         });
     }
 	
+	console.log($routeParams);
+	function getEvent() {
+		$http.post('PHP/get_event.php', {eventID: $routeParams.eventID})
+        .success(function(data) {
+            console.log("SUCCESS - Got Event!", data);
+			console.log(typeof data);
+            $scope.event = data;
+        });
+	}
+	getEvent();
+	
 	function getTeams() {
 		$http.post('PHP/get_eventTeamList.php', {eventID: $routeParams.eventID})
         .success(function(data) {
@@ -26,6 +37,7 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 			$scope.teams = $filter('orderBy')($scope.teams, 'team_num', false);
         });
 	}
+
 	getTeams();
 	
 	function defaultValue(property, value) {
@@ -54,6 +66,13 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 			}
 		}
 		return false;
+	}
+	
+	function returnToIndex()
+	{
+		console.log('iuh');
+		window.location = "/#/event/"+ $routeParams.eventID;
+		location.reload();
 	}
 	
 	function addMatchRecord(
@@ -119,7 +138,7 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 				updateMatchRecords();
 				alert("Success! Match record added.");
 				location.reload();
-				window.location = "/#/event/"+ $routeParams.eventID;
+				
             });
 		}
 	}

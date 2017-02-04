@@ -1,6 +1,15 @@
 <div id="matchRecords">
+	
+	<div>
+		<br>
+		<a href = "#/event/{{event.event_id}}" class = "btn" >Return to Index</a>
+		</br>
+	</div>
+
 
 	<h2>Match Records</h2>
+	
+	
 	
 	<div ng-controller="MatchRecordsCtrl">
 	
@@ -114,8 +123,7 @@
 			<b>End Game</b>
 			<table>
 				<tr>
-                <td>Climbed</td>
-                <td><input type="radio" value="yes" name="climb" ng-model="climb">Yes <input type="radio" value="no" name="climb" ng-model="climb">No</td>
+                <td>Climbed?</td><td><input type="radio" value="yes" name="climb" ng-model="climb"> Yes <input type="radio" value="no" name="climb" ng-model="climb"> No </td>
                 </tr> 
 				
 				<tr>
