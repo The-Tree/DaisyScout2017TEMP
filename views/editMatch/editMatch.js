@@ -5,7 +5,7 @@ angular.module('daisyscoutApp.editMatchRecord', ['ngRoute'])
     controller: 'EditMatchRecordCtrl'
   });
 }])
-
+//Gets Match data from database
 .controller('EditMatchRecordCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 	function getMatchRecord() {
         $http.post('PHP/get_matchRecord.php', {matchID: $routeParams.matchID})
@@ -27,7 +27,7 @@ angular.module('daisyscoutApp.editMatchRecord', ['ngRoute'])
 		return typeof value !== 'undefined';
 	}
 	
-		
+	//Checks to make sure there is a name
 	function checkRequiredField(name, field) {	
 		if (!defined(field)) {
 			alert(name + " is a required field.");
@@ -35,9 +35,9 @@ angular.module('daisyscoutApp.editMatchRecord', ['ngRoute'])
 		}
 		return true;
 	}
-	
+	//MAKE SURE THE VALUES HERE AND IN DAISYBASE MATCH
 	function updateMatchRecord() {
-			
+			//Checks to make sure the team is in the list and the match number is in the list
 		if (checkRequiredField("Team number", $scope.match.team_num) && checkRequiredField("Match number", $scope.match.match_num)) 
 		{	                                                                                                                                                                                                                                                    
 			console.log($scope.match);

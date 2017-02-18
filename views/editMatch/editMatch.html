@@ -15,6 +15,8 @@
 				<tr>
 				<td>Match Number:</td><td><input type="text" ng-model="match.match_num"></td>
 				</tr>
+				
+				
 			</table>
 			
 			<br/>
@@ -27,11 +29,21 @@
                 </tr> 
 				
 				<tr>
-				<td>Number of boulders scored/shot high:</td><td><input type="text" ng-model="match.auton_scored_high"> / <input type="text" ng-model="match.auton_shot_high"></td>
+				<td>Number of balls scored/shot high:</td><td><input type="text" ng-model="match.auton_scored_high"> / <input type="text" ng-model="match.auton_shot_high"></td>
 				</tr>
 
                 <tr>
-				<td>Number of boulders scored/shot low:</td><td><input type="text" ng-model="match.auton_scored_low"> / <input type="text" ng-model="match.auton_shot_low"> </td>
+				<td>Number of balls scored/shot low:</td><td><input type="text" ng-model="match.auton_scored_low"> / <input type="text" ng-model="match.auton_shot_low"> </td>
+				</tr>
+				
+				<tr>
+				<td>Gears Placed: </td>
+				<td><input type="text" ng-model="match.auton_gears"></td>
+				</tr>
+				
+				<tr>
+				<td>Rotors Started (For Alliance): </td>
+				<td><input type="text" ng-model="match.auton_rotors"></td>
 				</tr>
 			</table>
 			
@@ -42,7 +54,22 @@
 			<table >
 				
 				<tr>
-				<td>What type of bot?</td><td><input type="radio" value="Stand-Alone" name="bot_type" ng-model="match.bot_type"> Stand-Alone <input type="radio" value="OuterWorks" name="bot_type" ng-model="match.bot_type"> OuterWorks <input type="radio" value="Shooter" name="bot_type" ng-model="match.bot_type"> Shooter <input type="radio" value="Defender" name="bot_type" ng-model="match.bot_type"> Defender</td>
+				<td>Driver Ability </td>
+				<td><input type="radio" value="1" name="driver_skill" ng-model="match.driver_skill">1<input type="radio" value="2" name="driver_skill" ng-model="match.driver_skill">2 <input type="radio" value="3" name="driver_skill" ng-model="match.driver_skill"> 3 <input type="radio" value="4" name="driver_skill" ng-model="match.driver_skill"> 4 <input type="radio" value="5" name="driver_skill" ng-model="match.driver_skill"> 5</td>
+				</tr>
+				
+				<tr>
+				<td>Human Player Ability </td>
+				<td><input type="radio" value="1" name="human_skill" ng-model="match.human_skill">1<input type="radio" value="2" name="human_skill" ng-model="match.human_skill">2 <input type="radio" value="3" name="human_skill" ng-model="match.human_skill"> 3 <input type="radio" value="4" name="human_skill" ng-model="match.human_skill"> 4 <input type="radio" value="5" name="human_skill" ng-model="match.human_skill"> 5</td>
+				</tr>
+				
+				<tr>
+				<td>Defensive Ability </td>
+				<td><input type="radio" value="1" name="defense_skill" ng-model="match.defense_skill">1<input type="radio" value="2" name="defense_skill" ng-model="match.defense_skill">2 <input type="radio" value="3" name="defense_skill" ng-model="match.defense_skill"> 3 <input type="radio" value="4" name="defense_skill" ng-model="match.defense_skill"> 4 <input type="radio" value="5" name="defense_skill" ng-model="match.defense_skill"> 5</td>
+				</tr>
+				
+				<tr>
+				<td>What type of bot?</td><td><input type="radio" value="Stand-Alone" name="bot_type" ng-model="match.bot_type"> Stand-Alone <input type="radio" value="Gear" name="bot_type" ng-model="match.bot_type"> Gear <input type="radio" value="Shooter" name="bot_type" ng-model="match.bot_type"> Shooter <input type="radio" value="Defender" name="bot_type" ng-model="match.bot_type"> Defender</td>
 				</tr>
 				
 				<tr>

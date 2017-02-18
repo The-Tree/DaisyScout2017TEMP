@@ -1,7 +1,11 @@
+<!-- A GOOD IDEA IS TO MAKE SURE THIS AND INTERVIEWRECORDS.HTML HAVE THE SAME VARIABLES -->
+
+
 <div id="editInterviewRecord">
 	<h2>Edit Interview Records</h2>
 	<div ng-controller="EditInterviewRecordCtrl">
 		<form>
+		<!-- Inputting data is below-->
 		<h2>Overall</h2>        
             <table>
 				<tr>
@@ -11,7 +15,7 @@
 				<td><label>Team Number:</td><td><input type="text" name="team_num" ng-model="interview.team_num"></label></td>
 				</tr>
 			</table>
-			
+			<!-- Information about the drive system. Might want to be kept for the future-->
             <h2>Drive System</h2>
 			<table>
 				<br>
@@ -58,7 +62,7 @@
 				<td><label>Speed:</td><td><input type="text" ng-model="interview.speed"> feet per second.</label></td>
 				</tr>
 			</table>
-			
+			<!-- Shooter information. Recycle as necessary-->
 			<h2>Shooter</h2>
 			<table>
             <tr>
@@ -84,7 +88,7 @@
 				<input type="radio" value="low" name="primary_goal" ng-model="interview.primary_goal"> Low </br>
 				<input type="radio" value="both" name="primary_goal" ng-model="interview.primary_goal"> Both
 			</table>
-			
+			<!-- Game-specific data-->
 			<h2>Game</h2>
 			<table>
 				<tr>

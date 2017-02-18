@@ -5,7 +5,7 @@ angular.module('daisyscoutApp.editInterviewRecord', ['ngRoute'])
     controller: 'EditInterviewRecordCtrl'
   });
 }])
-
+//Gets interview data
 .controller('EditInterviewRecordCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 	function getInterviewRecord() {
         $http.post('PHP/get_interviewRecord.php', {interviewID: $routeParams.interviewID})
@@ -27,7 +27,7 @@ angular.module('daisyscoutApp.editInterviewRecord', ['ngRoute'])
 		return typeof value !== 'undefined';
 	}
 	
-		
+	//Checks to see if there is a name
 	function checkRequiredField(name, field) {	
 		if (!defined(field)) {
 			alert(name + " is a required field.");
@@ -35,9 +35,9 @@ angular.module('daisyscoutApp.editInterviewRecord', ['ngRoute'])
 		}
 		return true;
 	}
-	
+	//MAKE SURE THE VALUES HERE AND IN DAISYBASE MATCH
 	function updateInterviewRecord() {
-			
+		//Checks if the team is within the list of teams
 		if (checkRequiredField("Team #", $scope.interview.team_num) ) 
 		{	
 			console.log($scope.interview);
@@ -69,8 +69,7 @@ angular.module('daisyscoutApp.editInterviewRecord', ['ngRoute'])
                 window.location = "/#/event/"+ $routeParams.eventID + "/team/" + $scope.interview.team_num;
                 // TODO: redirect to main page / clear values from fields
 				//NOT TO DO: redirect to main page
-				
-				//this is a test
+
             });
 		}
 	}

@@ -1,6 +1,7 @@
 <div id="eventOverview">
 	<div ng-controller="EventViewerCtrl">
 
+		<!-- Buttons -->
 		<div id="addDataButtons">
 			<a href="#/event/{{eventID}}/addMatchRecord" class="btn">Add Match Record</a>
 			<a href="#/event/{{eventID}}/addInterview" class="btn">Add Interview</a>
@@ -8,6 +9,7 @@
 		
 		<h2>{{event.name}}</h2>
 		
+		<!-- Teams and their game information -->
 		<h3>Teams</h3>
 		<table class="table table-striped">
 			<tr>
@@ -39,7 +41,7 @@
 			</tr>
 		</table>
 		
-		
+		<!-- Teams and their interview data -->
 		<h3>Interview Data</h3>
 		<table class="table table-striped">
 			<tr>
