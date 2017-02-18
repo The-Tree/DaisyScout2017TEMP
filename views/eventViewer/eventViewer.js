@@ -10,7 +10,7 @@ angular.module('daisyscoutApp.event', ['ngRoute'])
 .controller('EventViewerCtrl', ['$scope', '$http', '$routeParams', '$filter', function($scope, $http, $routeParams, $filter) {
 	
 	$scope.eventID = $routeParams.eventID;	
-	
+	//Initialization of Team 
 	var Team = function(number, name) {
 		this.team_num = number;
 		this.name = name;
@@ -27,7 +27,9 @@ angular.module('daisyscoutApp.event', ['ngRoute'])
 	
 	Team.prototype.computeAveragesAndTotalsAndStuff = function() {
 	
-		// Compute total and average number of totes and containers scored.
+		// Compute total and average number of totes and containers scored. 2015
+		// Compute total and average number of boulders scored and defenses crossed 2016
+		// Compute total number of gears and rotors scored 2017 
 		if (this.matchRecords.length > 0) {
 			for (var i = 0; i < this.matchRecords.length; i++) 
 			{
@@ -52,7 +54,7 @@ angular.module('daisyscoutApp.event', ['ngRoute'])
 		
 		// 
 	}
-		
+	//Gets Data for display
 	console.log($routeParams);
 	function getEvent() {
 		$http.post('PHP/get_event.php', {eventID: $routeParams.eventID})

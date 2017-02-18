@@ -5,7 +5,7 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
     controller: 'MatchRecordsCtrl'
   });
 }])
-
+//Gets data
 .controller('MatchRecordsCtrl', ['$scope', '$http', '$routeParams', '$filter', function($scope, $http, $routeParams, $filter) {
 	
 	function updateMatchRecords() {
@@ -18,7 +18,7 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 			$scope.MatchRecordName = '';
         });
     }
-	
+	//Allows return to index to work
 	console.log($routeParams);
 	function getEvent() {
 		$http.post('PHP/get_event.php', {eventID: $routeParams.eventID})
@@ -68,13 +68,14 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
 		return false;
 	}
 	//This currently is not used - probably wont be - but keep in just in case
+	//Redirects to main event page
 	function returnToIndex()
 	{
 		console.log('Returned to Index');
 		window.location = "/#/event/"+ $routeParams.eventID;
 		location.reload();
 	}
-	
+	//MAKE SURE THE VALUES HERE AND IN DAISYBASE MATCH	
 	function addMatchRecord(
 		scout_name,
         team_num,
@@ -100,7 +101,7 @@ angular.module('daisyscoutApp.matchRecords', ['ngRoute'])
         balls_acquired,
         climb,
         comments) {
-
+		//Makes sure team number and match number are valid
 		console.log("Team Number: ", team_num);
 		if (!validateTeamNumber(team_num)) {
 			alert("Team number is not valid");

@@ -5,7 +5,7 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
     controller: 'InterviewRecordsCtrl'
   });
 }])
-
+//Gets Data
 .controller('InterviewRecordsCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 	function updateInterviewRecords() {
         $http.get('PHP/get_interviewRecords.php')
@@ -19,6 +19,7 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
     }
 	
 		console.log($routeParams);
+	//This makes the return to index button work
 	function getEvent() {
 		$http.post('PHP/get_event.php', {eventID: $routeParams.eventID})
         .success(function(data) {
@@ -40,7 +41,7 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 		return typeof value !== 'undefined';
 	}
 	
-		
+	//Checks to see if there is a name
 	function checkRequiredField(name, field) {	
 		if (!defined(field)) {
 			alert(name + " is a required field.");
@@ -48,10 +49,10 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 		}
 		return true;
 	}
-	
+	//MAKE SURE THE VALUES HERE AND IN DAISYBASE MATCH
 	function addInterviewRecord(scout_name, team_num, base_width, base_length, base_height, drive_motors, wheel_num, drive_system, wheel_type, speed, shooter_type, capacity, 
 	ball_rof, primary_goal, gear_ability, scale_ability) {
-			
+			//Checks if the team is within the list of teams
 		if (checkRequiredField("Team #", team_num) ) 
 		{	
 			console.log( 'TEST: value of $routeParams.eventID is: ' + $routeParams.eventID ); //test
@@ -84,7 +85,7 @@ angular.module('daisyscoutApp.interviewRecords', ['ngRoute'])
 
 						window.location = "/#/event/"+ $routeParams.eventID;
 						// TODO: redirect to main page / clear values from fields
-						//NOT TODO: Redirect maybe
+						//NOT TODO: Redirect 
 					});
 		}
 	}
