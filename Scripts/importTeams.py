@@ -6,9 +6,9 @@ import sqlite3
 import json
 from pprint import pprint
 
-print 'Enter event code: '
+print ('Enter event code: ')
 eventCode = sys.stdin.readline().rstrip().upper()
-print 'Enter event name: '
+print ('Enter event name: ')
 eventName = sys.stdin.readline().rstrip()
 
 jsonData = open('../Data/' + eventCode + '.json')
@@ -43,7 +43,7 @@ for i in range(0, len(teamList)):
             'country': teamList[i]['country_name']
         })
     else:
-        print str(teamList[i]['team_number']) + ' already exists in the database.'
+        print (str(teamList[i]['team_number']) + ' already exists in the database.')
         
     # Update the EventTeams table
     c.execute('SELECT EXISTS(SELECT * FROM EVENTTEAMS WHERE event_id = :event_id AND team_num = :team_num)', {'event_id': eventID, 'team_num': teamList[i]['team_number']})
